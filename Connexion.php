@@ -83,8 +83,8 @@ if(isset($_GET['inscription'])){
     ?>
 
 
-		<a href="mdp_Oublie.php">   Mot de passe oublié ? </a></br>
-	    <a href="inscription.php">   Inscription </a>
+		<a href="MdpOublie.php">   Mot de passe oublié ? </a></br>
+	    <a href="Inscription.php">   Inscription </a>
 	       
 	    
 	  </div>

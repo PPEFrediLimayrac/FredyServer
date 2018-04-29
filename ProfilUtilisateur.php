@@ -96,7 +96,7 @@
                     <td>'.$Adherents->get_sexe_Adherent().'</td>
                     <td><a href="Includes/ModifierAdh.php?id_Adherent='.$Adherents->get_id_Adherent().'&ji='.$Adherents->get_nom_Club().'"><img src="Images/modif.jpg" width="60" height="60"></td>
 
-                    <td><a href="Includes/supprimerAdh.php?id_Adherent='.$Adherents->get_id_Adherent().'"><img src="Images/delete.png" width="60" height="60" style="position: center;"></a></td>
+                    <td><a href="Includes/SupprimerAdh.php?id_Adherent='.$Adherents->get_id_Adherent().'"><img src="Images/delete.png" width="60" height="60" style="position: center;"></a></td>
                 </tr>'; 
                 }
 

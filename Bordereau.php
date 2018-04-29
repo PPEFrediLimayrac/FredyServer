@@ -153,7 +153,7 @@
 
                     <td>'.$total.'</td>
                   <td><a href="Includes/Modifier.php?idBordereau='.$LigneFrais->get_id_frais().'&annee='.$annee.'"><img src="Images/modif.jpg" width="60" height="60"></td>
-                  <td><a href="Includes/supprimer.php?idBordereau='.$LigneFrais->get_id_frais().'&annee='.$annee.'"><img src="Images/delete.png" width="60" height="60" style="positio
+                  <td><a href="Includes/Supprimer.php?idBordereau='.$LigneFrais->get_id_frais().'&annee='.$annee.'"><img src="Images/delete.png" width="60" height="60" style="positio
                   n: center;"></a></td>
                   </tr>');   
                 }else
@@ -179,7 +179,7 @@
         if(empty($pros['id_bloque']))
         { 
 
-            echo '<p><a href="Includes/ajouter.php?idBordereau='.$LigneFrais->get_id_NoteDeFrais().'&annee='.$annee.'"><img src="Images/ajout.png" width="60" height="60"></a></p>';
+            echo '<p><a href="Includes/Ajouter.php?idBordereau='.$LigneFrais->get_id_NoteDeFrais().'&annee='.$annee.'"><img src="Images/ajout.png" width="60" height="60"></a></p>';
             echo '<form method="post" action="Bordereau.php?annee='.$annee.'">
             <input type="submit" name="validerr" value="valider le bordereau">
             </form>';

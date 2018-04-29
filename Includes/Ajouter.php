@@ -61,11 +61,11 @@ $object->insertAvancer($h, $idBordereau, $pseudo );
   <div class="header">
     <div class="header_resize">
       <div class="logo">
-        <h1><a href="Index.php">Fredi</a></h1>
+        <h1><a href="../Index.php">Fredi</a></h1>
 
       </div>
         <?php
-          include('menuprincipal.php');
+          include('MenuPrincipal.php');
         ?>
                
       <div class="clr">
@@ -78,7 +78,7 @@ $object->insertAvancer($h, $idBordereau, $pseudo );
     <div class="hbg_resize"> 
       <div class="form_Ins_Un">
         
-      	<form method='post' action='ajouter.php'><br/>
+      	<form method='post' action='Ajouter.php'><br/>
 <input type='date' name='dateLigneFrais' placeholder='Date du trajet'><br/><br/>
 <select name='Adherent' id='Adherent' required>
 <?php

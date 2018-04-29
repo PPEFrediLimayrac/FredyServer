@@ -47,7 +47,7 @@ $submit = isset($_POST['submit']);
 
       </div>
         <?php
-          include('menuprincipal.php');
+          include('MenuPrincipal.php');
         ?>
                
       <div class="clr"></div>

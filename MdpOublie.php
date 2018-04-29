@@ -32,8 +32,8 @@
 		<p>adresse mail <br /><input type="text" name="mail" value="" placeholder="Viktorus@fredi.fr" required/></p>
 		<input type="submit" name="submit" value="envoyer l'email de récuperation"></BR>
 
-		<a href="inscription.php">   Pas encore inscrit ?  </a></BR>
-		<a href="connexion.php"> Retour à la connexion </a>
+		<a href="Inscription.php">   Pas encore inscrit ?  </a></BR>
+		<a href="Connexion.php"> Retour à la connexion </a>
       </p>
       </div>
     </div>

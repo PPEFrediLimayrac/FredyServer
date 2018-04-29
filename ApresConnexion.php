@@ -32,7 +32,7 @@
         <div class="hbg_pos_center">
           <a class="buttonTempo" href="ProfilUtilisateur.php"><input type="button" name="ProfilUtilisateur" class="buttonTempo">Gestion de profil</a>
           </br>
-          <a class="buttonTempo" href="bordereau.php"><input type="button" name="ProfilUtilisateur" class="buttonTempo">Accéder au Bordereau de frais</a>
+          <a class="buttonTempo" href="Bordereau.php"><input type="button" name="ProfilUtilisateur" class="buttonTempo">Accéder au Bordereau de frais</a>
         </div>
     </div>
   </div>
