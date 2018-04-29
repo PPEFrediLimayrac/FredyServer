@@ -31,7 +31,7 @@ class ClubDAO extends DAO{
       }
       $tableau = array();
       foreach ($rows as $row) {
-        $tableau[] = new adherent($row);
+        $tableau[] = new Adherent($row);
       }
       return $tableau;
     }

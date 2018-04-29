@@ -68,7 +68,7 @@ if(isset($_GET['inscription'])){
                 $_SESSION['pseudo_Demandeur'] = $pseudo_Demandeur;
                 
                 
-                header('Location: apresconnexion.php');
+                header('Location: ApresConnexion.php');
                 
               
             

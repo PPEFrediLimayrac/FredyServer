@@ -36,8 +36,8 @@ class Avancer
 function set_id_NoteDeFrais($id_NoteDeFrais) {
     $this->id_NoteDeFrais = $id_NoteDeFrais;
   }
-function set_prenom_adherent($prenom_adherent) {
-    $this->prenom_adherent = $prenom_adherent;
+function set_prenom_Adherent($prenom_Adherent) {
+    $this->prenom_Adherent = $prenom_Adherent;
 
 }
 

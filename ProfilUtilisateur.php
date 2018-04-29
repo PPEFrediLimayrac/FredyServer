@@ -6,29 +6,29 @@
     include_once('Includes/Club.php');
     //include_once('Includes/ClubDAO.php');
 
-    $licence_adherent=isset($_POST['licence_adherent']) ? $_POST['licence_adherent'] : '';
+    $licence_Adherent=isset($_POST['licence_Adherent']) ? $_POST['licence_Adherent'] : '';
     $id_Club=isset($_POST['id_Club']) ? $_POST['id_Club'] : '';
-    $nom_adherent=isset($_POST['nom_adherent']) ? $_POST['nom_adherent'] : '';
-    $prenom_adherent=isset($_POST['prenom_adherent']) ? $_POST['prenom_adherent'] : '';
+    $nom_Adherent=isset($_POST['nom_Adherent']) ? $_POST['nom_Adherent'] : '';
+    $prenom_Adherent=isset($_POST['prenom_Adherent']) ? $_POST['prenom_Adherent'] : '';
     $date_naissance=isset($_POST['date_naissance']) ? $_POST['date_naissance'] : '';
-    $ville_adherent=isset($_POST['ville_adherent']) ? $_POST['ville_adherent'] : '';
-    $cp_adherent=isset($_POST['cp_adherent']) ? $_POST['cp_adherent'] : '';
-    $rue_adherent=isset($_POST['rue_adherent']) ? $_POST['rue_adherent'] : '';
-    $sexe_adherent=isset($_POST['sexe_adherent']) ? $_POST['sexe_adherent'] : '';
+    $ville_Adherent=isset($_POST['ville_Adherent']) ? $_POST['ville_Adherent'] : '';
+    $cp_Adherent=isset($_POST['cp_Adherent']) ? $_POST['cp_Adherent'] : '';
+    $rue_Adherent=isset($_POST['rue_Adherent']) ? $_POST['rue_Adherent'] : '';
+    $sexe_Adherent=isset($_POST['sexe_Adherent']) ? $_POST['sexe_Adherent'] : '';
     
     $submit= isset($_POST['submit']);
   
-    $tableau = array('licence_adherent' => $licence_adherent,'id_Club' => $id_Club,
-    'nom_adherent' => $nom_adherent, 'prenom_adherent' => $prenom_adherent, 'date_naissance' => $date_naissance,'ville_adherent' => $ville_adherent,'cp_adherent' => $cp_adherent,'rue_adherent' => $rue_adherent,'sexe_adherent' => $sexe_adherent);
+    $tableau = array('licence_Adherent' => $licence_Adherent,'id_Club' => $id_Club,
+    'nom_Adherent' => $nom_Adherent, 'prenom_Adherent' => $prenom_Adherent, 'date_naissance' => $date_naissance,'ville_Adherent' => $ville_Adherent,'cp_Adherent' => $cp_Adherent,'rue_Adherent' => $rue_Adherent,'sexe_Adherent' => $sexe_Adherent);
     if($submit) {
-    $adherent_object = new adherent($tableau);
-    $adherent_DAO = new adherentDAO();
-    $adherent_DAO->insert_adherent($adherent_object, $_SESSION['pseudo_Demandeur']);
+    $Adherent_object = new Adherent($tableau);
+    $Adherent_DAO = new AdherentDAO();
+    $Adherent_DAO->insert_Adherent($Adherent_object, $_SESSION['pseudo_Demandeur']);
     }
 
     
-    $adherents = new adherent();
-    $rows = $adherents->findAllByPseudo($_SESSION['pseudo_Demandeur']); 
+    $Adherents = new Adherent();
+    $rows = $Adherents->findAllByPseudo($_SESSION['pseudo_Demandeur']); 
     $Clubs = new Club();
     $rows2 = $Clubs->findAll();
 ?>
@@ -61,7 +61,7 @@
     <div class="hbg_resize"> 
       <table border=1 cellspacing=1 cellpadding=2 bordercolor="black">
 
-        <caption><h2>adherents de <?php echo $_SESSION['pseudo_Demandeur']; ?> </h2></caption>
+        <caption><h2>Adherents de <?php echo $_SESSION['pseudo_Demandeur']; ?> </h2></caption>
         <tr>
        
             <th>N° de licence</th>
@@ -81,22 +81,22 @@
 
             <?php 
 
-              foreach ($rows as $adherents) {
+              foreach ($rows as $Adherents) {
                 echo
                 '<tr>
-                    <td>'.$adherents->get_licence_adherent().'</td>
-                    <td>'.$adherents->get_nom_adherent().'</td>
-                    <td>'.$adherents->get_prenom_adherent().'</td>
-                    <td>'.$adherents->get_nom_Club().'</td>
-                    <td>'.$adherents->get_libelle_Ligue().'</td>
-                    <td>'.$adherents->get_date_naissance().'</td>
-                    <td>'.$adherents->get_rue_adherent().'</td>
-                    <td>'.$adherents->get_cp_adherent().'</td>
-                    <td>'.$adherents->get_ville_adherent().'</td>
-                    <td>'.$adherents->get_sexe_adherent().'</td>
-                    <td><a href="Includes/ModifierAdh.php?id_adherent='.$adherents->get_id_adherent().'&ji='.$adherents->get_nom_Club().'"><img src="Images/modif.jpg" width="60" height="60"></td>
+                    <td>'.$Adherents->get_licence_Adherent().'</td>
+                    <td>'.$Adherents->get_nom_Adherent().'</td>
+                    <td>'.$Adherents->get_prenom_Adherent().'</td>
+                    <td>'.$Adherents->get_nom_Club().'</td>
+                    <td>'.$Adherents->get_libelle_Ligue().'</td>
+                    <td>'.$Adherents->get_date_naissance().'</td>
+                    <td>'.$Adherents->get_rue_Adherent().'</td>
+                    <td>'.$Adherents->get_cp_Adherent().'</td>
+                    <td>'.$Adherents->get_ville_Adherent().'</td>
+                    <td>'.$Adherents->get_sexe_Adherent().'</td>
+                    <td><a href="Includes/ModifierAdh.php?id_Adherent='.$Adherents->get_id_Adherent().'&ji='.$Adherents->get_nom_Club().'"><img src="Images/modif.jpg" width="60" height="60"></td>
 
-                    <td><a href="Includes/supprimerAdh.php?id_adherent='.$adherents->get_id_adherent().'"><img src="Images/delete.png" width="60" height="60" style="position: center;"></a></td>
+                    <td><a href="Includes/supprimerAdh.php?id_Adherent='.$Adherents->get_id_Adherent().'"><img src="Images/delete.png" width="60" height="60" style="position: center;"></a></td>
                 </tr>'; 
                 }
 
@@ -112,7 +112,7 @@
     <h2> Entrez un adhérent que vous souhaitez gérer </h2>
       <form action="ProfilUtilisateur.php" method="post" name="FormAjoutAdh">
         <div class="form_Ins_Un">
-          <p> Numéro de licence<br /><input type="text" name="licence_adherent" value=""  required/></p>
+          <p> Numéro de licence<br /><input type="text" name="licence_Adherent" value=""  required/></p>
 
 
             <label for="Club">Club</label><br />
@@ -141,23 +141,23 @@
 
 
           
-          <p> Nom adherent<br /><input type="text" name="nom_adherent" value=""  required/></p>
-          <p> Prenom adherent<br /><input type="text" name="prenom_adherent" value=""  required/></p>
+          <p> Nom Adherent<br /><input type="text" name="nom_Adherent" value=""  required/></p>
+          <p> Prenom Adherent<br /><input type="text" name="prenom_Adherent" value=""  required/></p>
           <p> Date de naissance<br /><input type='date' name='date_naissance' placeholder='date_naissance' required/></p>
         </div>
         <div class="form_Ins_Deux">
-          <p> Ville adherent<br /><input type="text" name="ville_adherent" value=""  required/></p>
-          <p> Code postal<br /><input type="text" name="cp_adherent" value=""  required/></p>
-          <p> Rue adherent<br /><input type="text" name="rue_adherent" value=""  required/></p>
+          <p> Ville Adherent<br /><input type="text" name="ville_Adherent" value=""  required/></p>
+          <p> Code postal<br /><input type="text" name="cp_Adherent" value=""  required/></p>
+          <p> Rue Adherent<br /><input type="text" name="rue_Adherent" value=""  required/></p>
           <p>
-            <label for="sexe_adherent">sexe_adherent</label><br />
-            <select name="sexe_adherent" id="sexe_adherent" required>
+            <label for="sexe_Adherent">sexe_Adherent</label><br />
+            <select name="sexe_Adherent" id="sexe_Adherent" required>
                <option value=""> </option>
                <option value="Homme">Homme</option>
                <option value="Femme">Femme</option>
             </select>
           </p>
-          <input type="hidden" name="id_Demandeur" value=<?php $adherents->get_id_Demandeur()?> />
+          <input type="hidden" name="id_Demandeur" value=<?php $Adherents->get_id_Demandeur()?> />
           <input type="submit" name="submit" value="Ajouter"></br>
           </div>
       </form>

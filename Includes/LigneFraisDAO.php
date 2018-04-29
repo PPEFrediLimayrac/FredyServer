@@ -10,7 +10,7 @@ class LigneFraisDAO extends DAO{
 
 
 function findAllBy($pseudo_Demandeur, $annee) {
-    $sql = "select avancer.id_NoteDeFrais, LigneFrais.id_frais, LigneFrais.dateLigneFrais,trajet_frais, km_frais, cout_trajet, cout_peage, cout_repas, cout_hebergement, adherent
+    $sql = "select avancer.id_NoteDeFrais, LigneFrais.id_frais, LigneFrais.dateLigneFrais,trajet_frais, km_frais, cout_trajet, cout_peage, cout_repas, cout_hebergement, Adherent
       from LigneFrais, NoteDeFrais, Demandeur, avancer
       where Demandeur.id_Demandeur=avancer.id_Demandeur
       and avancer.id_frais=LigneFrais.id_frais
@@ -67,14 +67,14 @@ SET FOREIGN_KEY_CHECKS=1;";
   }  
   
 
- function update($dateLigneFrais, $adherent ,$trajet_frais, $km_frais , $cout_trajet, $cout_peage, $cout_hebergement, $cout_repas,$idBordereau){
-     $sql = " UPDATE `LigneFrais` SET `dateLigneFrais`=:dateLigneFrais,`adherent`=:adherent,`trajet_frais`=:trajet_frais,`km_frais`=:km_frais,`cout_trajet`=:cout_trajet,`cout_peage`=:cout_peage,`cout_hebergement`=:cout_hebergement,`cout_repas`=:cout_repas WHERE LigneFrais.id_frais=:idBordereau
+ function update($dateLigneFrais, $Adherent ,$trajet_frais, $km_frais , $cout_trajet, $cout_peage, $cout_hebergement, $cout_repas,$idBordereau){
+     $sql = " UPDATE `LigneFrais` SET `dateLigneFrais`=:dateLigneFrais,`Adherent`=:Adherent,`trajet_frais`=:trajet_frais,`km_frais`=:km_frais,`cout_trajet`=:cout_trajet,`cout_peage`=:cout_peage,`cout_hebergement`=:cout_hebergement,`cout_repas`=:cout_repas WHERE LigneFrais.id_frais=:idBordereau
 ";
 
     try {
       $sth = self::get_connexion()->prepare($sql);
       $sth->execute(array(":cout_trajet" => $cout_trajet,
-        ":adherent" => $adherent,
+        ":Adherent" => $Adherent,
         ":dateLigneFrais" => $dateLigneFrais,
         ":trajet_frais" => $trajet_frais,
         ":km_frais" => $km_frais,
@@ -89,12 +89,12 @@ SET FOREIGN_KEY_CHECKS=1;";
   }
 
 
-  function insert($dateLigneFrais,$adherent ,$trajet_frais, $km_frais , $cout_trajet, $cout_peage, $cout_hebergement, $cout_repas){
-  	 $sql = "insert into LigneFrais (dateLigneFrais,adherent ,trajet_frais, km_frais , cout_trajet, cout_peage, cout_hebergement, cout_repas) values (:dateLigneFrais ,:adherent,:trajet_frais, :km_frais , :cout_trajet, :cout_peage, :cout_hebergement, :cout_repas) ";
+  function insert($dateLigneFrais,$Adherent ,$trajet_frais, $km_frais , $cout_trajet, $cout_peage, $cout_hebergement, $cout_repas){
+  	 $sql = "insert into LigneFrais (dateLigneFrais,Adherent ,trajet_frais, km_frais , cout_trajet, cout_peage, cout_hebergement, cout_repas) values (:dateLigneFrais ,:Adherent,:trajet_frais, :km_frais , :cout_trajet, :cout_peage, :cout_hebergement, :cout_repas) ";
     try {
       $sth = self::get_connexion()->prepare($sql);
       $sth->execute(array(":cout_trajet" => $cout_trajet,
-        ":adherent" => $adherent,
+        ":Adherent" => $Adherent,
       	":dateLigneFrais" => $dateLigneFrais,
       	":trajet_frais" => $trajet_frais,
       	":km_frais" => $km_frais,

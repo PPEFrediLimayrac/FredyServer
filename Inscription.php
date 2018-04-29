@@ -71,7 +71,7 @@ include_once "Includes\Demandeur.php";
               $DemandeurDAO = new DemandeurDAO();
              $DemandeurDAO->insert_Demandeur($Demandeur_object);
 
-            header('Location: connexion.php?inscription=ok');
+            header('Location: Connexion.php?inscription=ok');
 
             }
             else {

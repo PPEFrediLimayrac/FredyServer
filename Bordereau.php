@@ -9,8 +9,8 @@
 
   $submit = isset($_POST['submit']) ? $_POST['submit'] : '';
   $LigneFrais = new LigneFrais();
- $adherents = new adherent();
-    $adh = $adherents->findAllByPseudo($_SESSION['pseudo_Demandeur']); 
+ $Adherents = new Adherent();
+    $adh = $Adherents->findAllByPseudo($_SESSION['pseudo_Demandeur']); 
 
   if($submit)
   {
@@ -143,7 +143,7 @@
 
                   
                   <td>'.$LigneFrais->get_dateLigneFrais().'</td>
-                  <td>'.$LigneFrais->get_adherent().'</td>
+                  <td>'.$LigneFrais->get_Adherent().'</td>
                   <td>'.$LigneFrais->get_trajet_frais().'</td>
                   <td>'.$LigneFrais->get_km_frais().'</td>
                   <td>'.$LigneFrais->get_km_frais()*$tarifKm['tarif_kilometrique'].'</td>
@@ -161,7 +161,7 @@
                   echo('<tr>
                       
                       <td>'.$LigneFrais->get_dateLigneFrais().'</td>
-                      <td>'.$LigneFrais->get_adherent().'</td>
+                      <td>'.$LigneFrais->get_Adherent().'</td>
                       <td>'.$LigneFrais->get_trajet_frais().'</td>
                       <td>'.$LigneFrais->get_km_frais().'</td>
                       <td>'.$LigneFrais->get_km_frais()*$tarifKm['tarif_kilometrique'].'</td>

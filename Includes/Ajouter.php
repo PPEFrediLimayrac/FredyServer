@@ -16,15 +16,15 @@ $cout_peage = isset($_POST['cout_peage']) ? $_POST['cout_peage'] : '';
 $cout_hebergement= isset($_POST['cout_hebergement']) ? $_POST['cout_hebergement'] : '';
 $cout_repas = isset($_POST['cout_repas']) ? $_POST['cout_repas'] : '';
 $idBordereau = isset($_POST['idBordereau']) ? $_POST['idBordereau'] : '';
-$adherent = isset($_POST['adherent']) ? $_POST['adherent'] : '';
+$Adherent = isset($_POST['Adherent']) ? $_POST['Adherent'] : '';
 if(empty($idBordereau)){
 $idBordereau = $_GET['idBordereau'];
 }
 if(empty($annee)){
 $annee = $_GET['annee'];}
 
- $adherents = new adherent();
-$adh = $adherents->findAllByPseudo($_SESSION['pseudo_Demandeur']);
+ $Adherents = new Adherent();
+$adh = $Adherents->findAllByPseudo($_SESSION['pseudo_Demandeur']);
 
 
 if($submit){
@@ -35,7 +35,7 @@ $t = $new->insert($annee);
 $idBordereau=$t['LAST_INSERT_ID()'];
 }
 
-$idLigneFrais = $object->insert($dateLigneFrais, $adherent ,$trajet_frais, $km_frais , $cout_trajet, $cout_peage, $cout_hebergement, $cout_repas);
+$idLigneFrais = $object->insert($dateLigneFrais, $Adherent ,$trajet_frais, $km_frais , $cout_trajet, $cout_peage, $cout_hebergement, $cout_repas);
 $h = $idLigneFrais['LAST_INSERT_ID()'];
 $object->insertAvancer($h, $idBordereau, $pseudo );
 
@@ -80,11 +80,11 @@ $object->insertAvancer($h, $idBordereau, $pseudo );
         
       	<form method='post' action='ajouter.php'><br/>
 <input type='date' name='dateLigneFrais' placeholder='Date du trajet'><br/><br/>
-<select name='adherent' id='adherent' required>
+<select name='Adherent' id='Adherent' required>
 <?php
 
-foreach($adh as $adherents){
-echo ' <option value='.$adherents->get_prenom_adherent().'>'.$adherents->get_prenom_adherent().'</option>';
+foreach($adh as $Adherents){
+echo ' <option value='.$Adherents->get_prenom_Adherent().'>'.$Adherents->get_prenom_Adherent().'</option>';
 }
 ?>
 </select><br/><br/>

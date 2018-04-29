@@ -2,9 +2,9 @@
 session_start();
 include_once "Adherent.php";
 
-$id = $_GET['id_adherent'];
+$id = $_GET['id_Adherent'];
 
-$adieu = new adherent();
+$adieu = new Adherent();
 $bye = $adieu->deleteAdh($id);
 
  header('Location: ../ProfilUtilisateur.php');
